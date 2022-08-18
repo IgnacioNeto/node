@@ -1,10 +1,12 @@
 import express from "express";
 
 const app = express();
+app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
     // res.send('Uma resposta simpática3');
-    res.render('paginas/index');
+    const bandas = ["Metallica", "Guns N Roses"];
+    res.render('paginas/index', {bandas});
 
 });
 
